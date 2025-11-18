@@ -7,18 +7,20 @@ Aplicación web para planificar menús semanales con dos tablas independientes (
 ## 🏗️ Arquitectura
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    FRONTEND (React)                      │
-│                                                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
-│  │   Tabla      │  │   Tabla      │  │   Botón      │ │
-│  │  Cristina    │  │   Marisa     │  │  Generar IA  │ │
-│  └──────────────┘  └──────────────┘  └──────────────┘ │
-│                                                          │
-│              HTTP Request (POST /generar-menu)           │
-└───────────────────────────┬──────────────────────────────┘
-                            │
-                            ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                       FRONTEND (React)                            │
+│                                                                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ Planificador │  │   Listado    │  │   Botón      │          │
+│  │   (Tablas)   │  │  de Platos   │  │  Generar IA  │          │
+│  │  Cristina +  │  │  (RecipeList)│  │              │          │
+│  │   Marisa     │  │              │  │              │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+│         ↕                                     ↓                   │
+│    Navegación                  HTTP Request (POST /generar-menu) │
+└───────────────────────────────────────┬──────────────────────────┘
+                                        │
+                                        ▼
 ┌─────────────────────────────────────────────────────────┐
 │                  BACKEND (FastAPI)                       │
 │                                                          │
@@ -55,7 +57,8 @@ Planificadormenusapp/
 │
 ├── 📂 src/                       # CÓDIGO FRONTEND
 │   ├── 📄 main.tsx              # Entrada principal React
-│   ├── 📄 App.tsx               # Componente principal
+│   ├── 📄 App.tsx               # Componente principal con planificador
+│   ├── 📄 RecipeList.tsx        # Componente de listado de platos
 │   ├── 📄 index.css             # Estilos globales
 │   └── 📄 vite-env.d.ts         # Tipos TypeScript
 │
@@ -82,15 +85,17 @@ Planificadormenusapp/
 
 ### **Componentes Principales**
 
-#### `App.tsx`
+#### `App.tsx` - Planificador de Menús
 **Responsabilidades:**
 - Gestionar estado de dos menús independientes (`weeklyPlanCristina` y `weeklyPlanMarisa`)
 - Renderizar dos tablas con días horizontales y comidas verticales
 - Interfaz de generación con IA (modal)
 - Funcionalidad de impresión/exportación a PDF
+- Navegación entre vistas (Planificador ↔ Listado de Platos)
 
 **Estados principales:**
 ```typescript
+const [currentView, setCurrentView] = useState<'planner' | 'recipes'>('planner')
 const [weeklyPlanCristina, setWeeklyPlanCristina] = useState<WeeklyPlan>({...})
 const [weeklyPlanMarisa, setWeeklyPlanMarisa] = useState<WeeklyPlan>({...})
 const [showAIModal, setShowAIModal] = useState(false)
@@ -101,6 +106,42 @@ const [showAIModal, setShowAIModal] = useState(false)
 - `handleMealChangeCristina()` - Actualiza comidas de Cristina
 - `handleMealChangeMarisa()` - Actualiza comidas de Marisa
 - `handlePrint()` - Genera PDF con ambas tablas
+
+#### `RecipeList.tsx` - Gestión de Recetas
+**Responsabilidades:**
+- Mostrar listado completo de platos disponibles
+- Sistema de búsqueda por nombre o ingredientes
+- Filtros por categoría (Comida/Cena) y tipo de cocina
+- Añadir nuevas recetas al catálogo
+- Eliminar recetas existentes
+- Navegación de regreso al planificador
+
+**Estados principales:**
+```typescript
+const [recipes, setRecipes] = useState<Recipe[]>([...])
+const [newRecipe, setNewRecipe] = useState<Omit<Recipe, 'id'>>({...})
+const [showAddForm, setShowAddForm] = useState(false)
+const [searchTerm, setSearchTerm] = useState('')
+const [filterCategory, setFilterCategory] = useState('Todas')
+const [filterCuisine, setFilterCuisine] = useState('Todas')
+```
+
+**Tipos de Datos:**
+```typescript
+type Recipe = {
+  id: number;
+  name: string;
+  category: string;
+  cuisine: string;
+  ingredients?: string;
+}
+```
+
+**Funciones clave:**
+- `handleAddRecipe()` - Añade nueva receta al listado
+- `handleDeleteRecipe(id)` - Elimina receta por ID
+- `filteredRecipes` - Aplica búsqueda y filtros
+- `onBack()` - Regresa a la vista del planificador
 
 ### **Estructura de Datos**
 ```typescript
@@ -119,6 +160,17 @@ interface WeeklyPlan {
 - ✅ Diseño responsive
 - ✅ Impresión optimizada (landscape, dos tablas por página)
 - ✅ Modal con formulario de preferencias para IA
+- ✅ **Navegación entre vistas (Planificador ↔ Listado)**
+- ✅ **Botón "Listado de Platos" para gestionar recetas**
+
+### **Listado de Platos - Características**
+- 🔍 **Búsqueda avanzada** por nombre o ingredientes
+- 🏷️ **Filtros dinámicos** por categoría y tipo de cocina
+- ➕ **Añadir recetas** con formulario completo
+- 🗑️ **Eliminar recetas** individualmente
+- 📋 **Vista en tarjetas** con información detallada
+- 🎨 **Etiquetas de color** para categorías y cocinas
+- ⬅️ **Botón de retorno** al planificador
 
 ---
 
@@ -284,9 +336,81 @@ SPOONACULAR_API_KEY=c6a71ac36ea14252af855b2f4199cee3
 
 ---
 
-## 🔄 Flujo de Datos Completo
+## 🔄 Flujos de Datos Completos
 
-### **Generación de Menú con IA**
+### **1. Navegación entre Vistas**
+
+```
+1. Usuario en vista Planificador
+   ↓
+2. Click en botón "Listado de Platos" (verde)
+   ↓
+3. Estado currentView cambia de 'planner' a 'recipes'
+   ↓
+4. Se renderiza componente RecipeList
+   ↓
+5. Usuario puede:
+   - Buscar recetas
+   - Filtrar por categoría/cocina
+   - Añadir nuevas recetas
+   - Eliminar recetas
+   ↓
+6. Click en "Volver al Planificador"
+   ↓
+7. Estado currentView vuelve a 'planner'
+   ↓
+8. Se renderiza componente App con tablas
+```
+
+### **2. Gestión de Recetas**
+
+```
+BÚSQUEDA:
+1. Usuario escribe en campo de búsqueda
+   ↓
+2. Estado searchTerm se actualiza
+   ↓
+3. filteredRecipes filtra por nombre e ingredientes
+   ↓
+4. Lista se actualiza en tiempo real
+
+FILTRADO:
+1. Usuario selecciona categoría o cocina
+   ↓
+2. Estados filterCategory/filterCuisine se actualizan
+   ↓
+3. filteredRecipes aplica múltiples filtros
+   ↓
+4. Solo se muestran recetas que coinciden
+
+AÑADIR RECETA:
+1. Click en "Añadir Nuevo Plato"
+   ↓
+2. Formulario se despliega (showAddForm = true)
+   ↓
+3. Usuario completa campos
+   ↓
+4. Click en "Guardar Plato"
+   ↓
+5. handleAddRecipe() crea nuevo objeto Recipe
+   ↓
+6. ID generado con Date.now()
+   ↓
+7. Receta agregada a array recipes
+   ↓
+8. Formulario se cierra y resetea
+
+ELIMINAR RECETA:
+1. Click en icono de papelera
+   ↓
+2. handleDeleteRecipe(id) se ejecuta
+   ↓
+3. recipes.filter() excluye la receta con ese ID
+   ↓
+4. Lista se actualiza inmediatamente
+```
+
+### **3. Generación de Menú con IA**
 
 ```
 1. Usuario hace clic en "Generar con IA" 
@@ -399,7 +523,7 @@ pydantic==2.5.0
 
 ### ✅ **Funcionalidades Completadas**
 
-#### Frontend
+#### Frontend - Planificador
 - [x] Dos tablas independientes (Cristina y Marisa)
 - [x] Layout horizontal (días en columnas)
 - [x] Edición manual de comidas
@@ -409,6 +533,19 @@ pydantic==2.5.0
 - [x] Impresión optimizada (landscape)
 - [x] Diseño responsive
 - [x] Estado independiente por tabla
+
+#### Frontend - Listado de Platos
+- [x] **Vista completa de recetas disponibles**
+- [x] **Sistema de búsqueda por nombre/ingredientes**
+- [x] **Filtros dinámicos por categoría**
+- [x] **Filtros dinámicos por tipo de cocina**
+- [x] **Formulario para añadir recetas**
+- [x] **Función de eliminar recetas**
+- [x] **Navegación entre vistas (botones)**
+- [x] **Diseño con tarjetas informativas**
+- [x] **Etiquetas de color por categoría/cocina**
+- [x] **5 recetas precargadas de ejemplo**
+- [x] **Contador de recetas filtradas**
 
 #### Backend
 - [x] API REST con FastAPI
@@ -447,16 +584,28 @@ pydantic==2.5.0
 
 ## 📈 Futuras Mejoras Posibles
 
+### Planificador
 - [ ] Persistencia de menús en base de datos
 - [ ] Autenticación de usuarios
 - [ ] Lista de compras automática
 - [ ] Información nutricional por plato
-- [ ] Recetas favoritas
 - [ ] Historial de menús generados
 - [ ] Compartir menús por enlace
 - [ ] Modo oscuro
 - [ ] Exportar a formato Excel
 - [ ] Integración con calendario
+
+### Listado de Platos
+- [ ] **Guardar recetas en localStorage**
+- [ ] **Conectar con backend para persistencia**
+- [ ] **Importar/Exportar recetas en JSON**
+- [ ] **Imágenes para cada receta**
+- [ ] **Tiempo de preparación**
+- [ ] **Nivel de dificultad**
+- [ ] **Recetas favoritas (marcadores)**
+- [ ] **Paginación para listados largos**
+- [ ] **Ordenar por nombre/categoría/cocina**
+- [ ] **Arrastrar recetas al planificador**
 
 ---
 
@@ -474,9 +623,67 @@ pydantic==2.5.0
 4. Revisa y edita si es necesario
 5. Imprime el resultado
 
+### **Gestionar Listado de Platos** 🆕
+1. **Acceder:** Click en botón verde "Listado de Platos"
+2. **Buscar:** Escribe en el campo de búsqueda
+3. **Filtrar:** Usa selectores de categoría y cocina
+4. **Añadir receta:**
+   - Click en "Añadir Nuevo Plato"
+   - Completa el formulario
+   - Click en "Guardar Plato"
+5. **Eliminar receta:** Click en icono de papelera 🗑️
+6. **Volver:** Click en "Volver al Planificador"
+
 ---
 
-## 📄 Licencia
+## � Detalles Técnicos Adicionales
+
+### **RecipeList.tsx - Gestión de Estado**
+
+**Estructura de Receta:**
+```typescript
+type Recipe = {
+  id: number;           // ID único generado con Date.now()
+  name: string;         // Nombre del plato
+  category: string;     // "Comida" o "Cena"
+  cuisine: string;      // Tipo de cocina
+  ingredients?: string; // Ingredientes principales (opcional)
+}
+```
+
+**Recetas Precargadas:**
+```typescript
+[
+  { id: 1, name: 'Ensalada Griega con Queso Feta', category: 'Comida', cuisine: 'Mediterránea' },
+  { id: 2, name: 'Pasta con Tomate y Albahaca', category: 'Comida', cuisine: 'Italiana' },
+  { id: 3, name: 'Sopa de Verduras', category: 'Cena', cuisine: 'Mediterránea' },
+  { id: 4, name: 'Paella Valenciana', category: 'Comida', cuisine: 'Española' },
+  { id: 5, name: 'Tacos de Pollo', category: 'Comida', cuisine: 'Mexicana' }
+]
+```
+
+**Algoritmo de Filtrado:**
+```typescript
+const filteredRecipes = recipes.filter((recipe) => {
+  const matchesSearch = 
+    recipe.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    recipe.ingredients?.toLowerCase().includes(searchTerm.toLowerCase());
+  const matchesCategory = filterCategory === 'Todas' || recipe.category === filterCategory;
+  const matchesCuisine = filterCuisine === 'Todas' || recipe.cuisine === filterCuisine;
+  return matchesSearch && matchesCategory && matchesCuisine;
+});
+```
+
+**Tipos de Cocina Disponibles:**
+- Mediterránea
+- Italiana
+- Asiática
+- Mexicana
+- Española
+
+---
+
+## �📄 Licencia
 
 Aplicación privada - Cristina & Marisa
 
@@ -491,4 +698,11 @@ Para problemas técnicos, revisar:
 
 ---
 
-**Última actualización:** 14 de noviembre de 2025
+**Última actualización:** 18 de noviembre de 2025
+
+**Cambios recientes:**
+- ✨ Añadido componente RecipeList.tsx para gestión de recetas
+- 🔄 Implementado sistema de navegación entre vistas
+- 🎨 Interfaz de listado con búsqueda y filtros avanzados
+- ➕ Funcionalidad de añadir/eliminar recetas
+
