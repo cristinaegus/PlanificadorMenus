@@ -1,0 +1,191 @@
+{
+  "menus": [
+    {
+      "id": 1,
+      "nombre": "Menú Asiático Semana 1",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "asiática",
+      "semana": {
+        "Lunes": {
+          "lunch": "Arroz Tres Delicias",
+          "dinner": "Sopa Miso"
+        },
+        "Martes": {
+          "lunch": "Pollo Teriyaki",
+          "dinner": "Rollitos Primavera"
+        },
+        "Miércoles": {
+          "lunch": "Pad Thai de Verduras",
+          "dinner": "Edamame al Vapor"
+        },
+        "Jueves": {
+          "lunch": "Sushi Variado",
+          "dinner": "Ensalada Asiática"
+        },
+        "Viernes": {
+          "lunch": "Fideos Yakisoba",
+          "dinner": "Gyozas al Vapor"
+        },
+        "Sábado": {
+          "lunch": "Curry Rojo Tailandés",
+          "dinner": "Sopa de Wonton"
+        },
+        "Domingo": {
+          "lunch": "Arroz Frito con Gambas",
+          "dinner": "Tataki de Atún"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Menú Mexicano Semana 2",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "mexicana",
+      "semana": {
+        "Lunes": {
+          "lunch": "Tacos de Pollo",
+          "dinner": "Guacamole con Nachos"
+        },
+        "Martes": {
+          "lunch": "Enchiladas de Queso",
+          "dinner": "Sopa de Tortilla"
+        },
+        "Miércoles": {
+          "lunch": "Quesadillas de Verduras",
+          "dinner": "Ceviche Mexicano"
+        },
+        "Jueves": {
+          "lunch": "Burrito Bowl",
+          "dinner": "Elote Asado"
+        },
+        "Viernes": {
+          "lunch": "Fajitas de Ternera",
+          "dinner": "Ensalada de Nopales"
+        },
+        "Sábado": {
+          "lunch": "Chiles Rellenos",
+          "dinner": "Pozole Verde"
+        },
+        "Domingo": {
+          "lunch": "Arroz Mexicano con Frijoles",
+          "dinner": "Sopa de Frijoles"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Menú Italiano Gourmet",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "italiana",
+      "semana": {
+        "Lunes": {
+          "lunch": "Penne Arrabbiata",
+          "dinner": "Sopa de Tomate"
+        },
+        "Martes": {
+          "lunch": "Saltimbocca alla Romana",
+          "dinner": "Vitello Tonnato"
+        },
+        "Miércoles": {
+          "lunch": "Pasta Primavera",
+          "dinner": "Arancini de Arroz"
+        },
+        "Jueves": {
+          "lunch": "Lasaña Boloñesa",
+          "dinner": "Bruschetta Variada"
+        },
+        "Viernes": {
+          "lunch": "Risotto de Champiñones",
+          "dinner": "Caprese con Pesto"
+        },
+        "Sábado": {
+          "lunch": "Pollo Parmesano",
+          "dinner": "Carpaccio de Ternera"
+        },
+        "Domingo": {
+          "lunch": "Gnocchi al Pesto",
+          "dinner": "Minestrone"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Menú Mediterráneo Light",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "mediterránea",
+      "semana": {
+        "Lunes": {
+          "lunch": "Ensalada Griega con Queso Feta",
+          "dinner": "Sopa de Verduras"
+        },
+        "Martes": {
+          "lunch": "Salmón al Limón",
+          "dinner": "Revuelto de Setas"
+        },
+        "Miércoles": {
+          "lunch": "Pollo a la Plancha con Hierbas",
+          "dinner": "Calabacín Relleno"
+        },
+        "Jueves": {
+          "lunch": "Pescado al Horno con Limón",
+          "dinner": "Sepia a la Plancha"
+        },
+        "Viernes": {
+          "lunch": "Arroz con Verduras Mediterráneas",
+          "dinner": "Crema de Verduras"
+        },
+        "Sábado": {
+          "lunch": "Berenjena a la Parmesana",
+          "dinner": "Gazpacho Andaluz"
+        },
+        "Domingo": {
+          "lunch": "Lentejas con Verduras",
+          "dinner": "Merluza a la Plancha"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Menú Variado Internacional",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "internacional",
+      "semana": {
+        "Lunes": {
+          "lunch": "Paella Valenciana",
+          "dinner": "Croquetas Caseras"
+        },
+        "Martes": {
+          "lunch": "Wok de Verduras con Pollo",
+          "dinner": "Sopa Miso"
+        },
+        "Miércoles": {
+          "lunch": "Hamburguesa Gourmet",
+          "dinner": "Ensalada César"
+        },
+        "Jueves": {
+          "lunch": "Pasta Carbonara",
+          "dinner": "Bruschetta Italiana"
+        },
+        "Viernes": {
+          "lunch": "Tacos de Pescado",
+          "dinner": "Guacamole con Tortillas"
+        },
+        "Sábado": {
+          "lunch": "Arroz Tres Delicias",
+          "dinner": "Rollitos Primavera"
+        },
+        "Domingo": {
+          "lunch": "Cocido Madrileño",
+          "dinner": "Tortilla Española"
+        }
+      }
+    }
+  ],
+  "preferencias": {
+    "restricciones_dieteticas": [],
+    "alergias": [],
+    "alimentos_favoritos": ["pasta", "pollo", "arroz", "comida asiática"],
+    "alimentos_evitar": []
+  },
+  "notas": "Menús personalizados para Marisa con variedad internacional y énfasis en cocina asiática e italiana"
+}

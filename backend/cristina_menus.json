@@ -1,0 +1,227 @@
+{
+  "menus": [
+    {
+      "id": 1,
+      "nombre": "Menú Mediterráneo Semana 1",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "mediterránea",
+      "semana": {
+        "Lunes": {
+          "lunch": "Ensalada Griega con Queso Feta",
+          "dinner": "Sopa de Verduras"
+        },
+        "Martes": {
+          "lunch": "Pasta con Tomate y Albahaca",
+          "dinner": "Tortilla de Patatas"
+        },
+        "Miércoles": {
+          "lunch": "Pescado al Horno con Limón",
+          "dinner": "Crema de Calabacín"
+        },
+        "Jueves": {
+          "lunch": "Arroz con Verduras Mediterráneas",
+          "dinner": "Lubina al Vapor con Verduras"
+        },
+        "Viernes": {
+          "lunch": "Pollo a la Plancha con Hierbas",
+          "dinner": "Pechuga de Pavo con Ensalada"
+        },
+        "Sábado": {
+          "lunch": "Berenjena a la Parmesana",
+          "dinner": "Gazpacho Andaluz"
+        },
+        "Domingo": {
+          "lunch": "Lentejas con Verduras",
+          "dinner": "Merluza a la Plancha"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Menú Italiano Semana 2",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "italiana",
+      "semana": {
+        "Lunes": {
+          "lunch": "Lasaña Boloñesa",
+          "dinner": "Minestrone"
+        },
+        "Martes": {
+          "lunch": "Risotto alla Milanese",
+          "dinner": "Carpaccio de Ternera"
+        },
+        "Miércoles": {
+          "lunch": "Pizza Margherita",
+          "dinner": "Caprese de Tomate y Mozzarella"
+        },
+        "Jueves": {
+          "lunch": "Pasta Carbonara",
+          "dinner": "Bruschetta Italiana"
+        },
+        "Viernes": {
+          "lunch": "Pollo Parmesano",
+          "dinner": "Calamares a la Romana"
+        },
+        "Sábado": {
+          "lunch": "Gnocchi al Pesto",
+          "dinner": "Panzanella"
+        },
+        "Domingo": {
+          "lunch": "Ossobuco con Risotto",
+          "dinner": "Frittata de Verduras"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Menú Saludable Semana 3",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "saludable",
+      "semana": {
+        "Lunes": {
+          "lunch": "Salmón a la Parrilla con Espárragos",
+          "dinner": "Ensalada de Quinoa"
+        },
+        "Martes": {
+          "lunch": "Pollo al Vapor con Brócoli",
+          "dinner": "Crema de Verduras Verdes"
+        },
+        "Miércoles": {
+          "lunch": "Pescado Blanco con Verduras al Horno",
+          "dinner": "Ensalada de Legumbres"
+        },
+        "Jueves": {
+          "lunch": "Pechuga de Pavo con Ensalada Mixta",
+          "dinner": "Wok de Verduras"
+        },
+        "Viernes": {
+          "lunch": "Merluza al Papillote",
+          "dinner": "Gazpacho con Aguacate"
+        },
+        "Sábado": {
+          "lunch": "Arroz Integral con Verduras",
+          "dinner": "Ensalada de Tomate y Atún"
+        },
+        "Domingo": {
+          "lunch": "Pollo a la Plancha con Judías Verdes",
+          "dinner": "Crema de Calabaza"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Menú Español Tradicional",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "española",
+      "semana": {
+        "Lunes": {
+          "lunch": "Paella Valenciana",
+          "dinner": "Croquetas Caseras"
+        },
+        "Martes": {
+          "lunch": "Fabada Asturiana",
+          "dinner": "Patatas Bravas"
+        },
+        "Miércoles": {
+          "lunch": "Cocido Madrileño",
+          "dinner": "Tortilla Española"
+        },
+        "Jueves": {
+          "lunch": "Pollo al Chilindrón",
+          "dinner": "Pimientos de Padrón"
+        },
+        "Viernes": {
+          "lunch": "Bacalao al Pil Pil",
+          "dinner": "Pulpo a la Gallega"
+        },
+        "Sábado": {
+          "lunch": "Arroz a Banda",
+          "dinner": "Gambas al Ajillo"
+        },
+        "Domingo": {
+          "lunch": "Caldereta de Cordero",
+          "dinner": "Jamón Ibérico con Pan"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Menú Vegetariano",
+      "fecha_creacion": "2025-11-21",
+      "tipo_cocina": "vegetariana",
+      "semana": {
+        "Lunes": {
+          "lunch": "Berenjenas Rellenas de Quinoa",
+          "dinner": "Crema de Champiñones"
+        },
+        "Martes": {
+          "lunch": "Lasaña de Verduras",
+          "dinner": "Ensalada César Vegetariana"
+        },
+        "Miércoles": {
+          "lunch": "Risotto de Verduras",
+          "dinner": "Gazpacho"
+        },
+        "Jueves": {
+          "lunch": "Pimientos Rellenos de Arroz",
+          "dinner": "Crema de Calabacín"
+        },
+        "Viernes": {
+          "lunch": "Pasta Primavera",
+          "dinner": "Ensalada de Garbanzos"
+        },
+        "Sábado": {
+          "lunch": "Hamburguesas de Lentejas",
+          "dinner": "Sopa de Verduras"
+        },
+        "Domingo": {
+          "lunch": "Paella de Verduras",
+          "dinner": "Tortilla de Patatas"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Menú casa de Cristina",
+      "fecha_creacion": "2025-11-27",
+      "tipo_cocina": "casa",
+      "semana": {
+        "Lunes": {
+          "lunch": "Berenjenas Rellenas de Quinoa",
+          "dinner": "Crema de Champiñones"
+        },
+        "Martes": {
+          "lunch": "Lasaña de Verduras",
+          "dinner": "Ensalada César Vegetariana"
+        },
+        "Miércoles": {
+          "lunch": "Risotto de Verduras",
+          "dinner": "Gazpacho"
+        },
+        "Jueves": {
+          "lunch": "Pimientos Rellenos de Arroz",
+          "dinner": "Crema de Calabacín"
+        },
+        "Viernes": {
+          "lunch": "Pasta Primavera",
+          "dinner": "Ensalada de Garbanzos"
+        },
+        "Sábado": {
+          "lunch": "Hamburguesas de Lentejas",
+          "dinner": "Sopa de Verduras"
+        },
+        "Domingo": {
+          "lunch": "Paella de Verduras",
+          "dinner": "Tortilla de Patatas"
+        }
+      }
+    }
+  ],
+  "preferencias": {
+    "restricciones_dieteticas": [],
+    "alergias": [],
+    "alimentos_favoritos": ["pescado", "verduras", "ensaladas"],
+    "alimentos_evitar": []
+  },
+  "notas": "Menús personalizados para Cristina con énfasis en comida mediterránea y saludable"
+}

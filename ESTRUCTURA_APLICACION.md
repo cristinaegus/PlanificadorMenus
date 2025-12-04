@@ -11,13 +11,15 @@ Aplicación web para planificar menús semanales con dos tablas independientes (
 │                       FRONTEND (React)                            │
 │                                                                   │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ Planificador │  │   Listado    │  │   Botón      │          │
-│  │   (Tablas)   │  │  de Platos   │  │  Generar IA  │          │
-│  │  Cristina +  │  │  (RecipeList)│  │              │          │
-│  │   Marisa     │  │              │  │              │          │
+│  │ Planificador │  │   Listado    │  │   Selector   │          │
+│  │   (Tablas)   │  │  de Platos   │  │   de Menú    │          │
+│  │  Cristina +  │  │  (RecipeList)│  │(MenuSelector)│          │
+│  │   Marisa     │  │              │  │  Desplegables│          │
 │  └──────────────┘  └──────────────┘  └──────────────┘          │
-│         ↕                                     ↓                   │
-│    Navegación                  HTTP Request (POST /generar-menu) │
+│         ↕                 ↕                  ↕                    │
+│    Navegación        Navegación        Navegación               │
+│         ↓                                     ↓                   │
+│    Generar IA                  HTTP Request (POST /generar-menu) │
 └───────────────────────────────────────┬──────────────────────────┘
                                         │
                                         ▼
@@ -59,6 +61,7 @@ Planificadormenusapp/
 │   ├── 📄 main.tsx              # Entrada principal React
 │   ├── 📄 App.tsx               # Componente principal con planificador
 │   ├── 📄 RecipeList.tsx        # Componente de listado de platos
+│   ├── 📄 MenuSelector.tsx      # Componente selector de menú con opciones
 │   ├── 📄 index.css             # Estilos globales
 │   └── 📄 vite-env.d.ts         # Tipos TypeScript
 │
@@ -143,6 +146,46 @@ type Recipe = {
 - `filteredRecipes` - Aplica búsqueda y filtros
 - `onBack()` - Regresa a la vista del planificador
 
+#### `MenuSelector.tsx` - Selector de Menú con Opciones
+**Responsabilidades:**
+- Mostrar categorías de menú con opciones desplegables
+- Permitir selección de opciones para cada categoría
+- Añadir nuevas categorías personalizadas
+- Eliminar categorías existentes
+- Generar PDF con menú seleccionado
+- Resetear todas las selecciones
+
+**Estados principales:**
+```typescript
+const [menuSections, setMenuSections] = useState<MenuOption[]>([...])
+const [newSection, setNewSection] = useState({ name: '', options: '' })
+const [showAddForm, setShowAddForm] = useState(false)
+```
+
+**Tipos de Datos:**
+```typescript
+type MenuOption = {
+  id: number;
+  name: string;            // Nombre de la categoría (Ej: "Entrante")
+  options: string[];       // Array de opciones disponibles
+  selectedOption: string;  // Opción actualmente seleccionada
+}
+```
+
+**Categorías Predefinidas:**
+- Entrante (7 opciones)
+- Primer Plato (7 opciones)
+- Segundo Plato (7 opciones)
+- Postre (6 opciones)
+- Bebida (6 opciones)
+
+**Funciones clave:**
+- `handleOptionChange(id, value)` - Actualiza opción seleccionada
+- `handleAddSection()` - Añade nueva categoría de menú
+- `handleDeleteSection(id)` - Elimina categoría
+- `handleReset()` - Resetea todas las selecciones
+- `handlePrint()` - Genera PDF con menú completo
+
 ### **Estructura de Datos**
 ```typescript
 interface WeeklyPlan {
@@ -160,8 +203,9 @@ interface WeeklyPlan {
 - ✅ Diseño responsive
 - ✅ Impresión optimizada (landscape, dos tablas por página)
 - ✅ Modal con formulario de preferencias para IA
-- ✅ **Navegación entre vistas (Planificador ↔ Listado)**
+- ✅ **Navegación entre 3 vistas (Planificador ↔ Listado ↔ Menú)**
 - ✅ **Botón "Listado de Platos" para gestionar recetas**
+- ✅ **Botón "Elige Menú" para selector de opciones**
 
 ### **Listado de Platos - Características**
 - 🔍 **Búsqueda avanzada** por nombre o ingredientes
@@ -171,6 +215,17 @@ interface WeeklyPlan {
 - 📋 **Vista en tarjetas** con información detallada
 - 🎨 **Etiquetas de color** para categorías y cocinas
 - ⬅️ **Botón de retorno** al planificador
+
+### **Selector de Menú - Características**
+- 🍽️ **Opciones desplegables** por categoría
+- ✅ **5 categorías predefinidas** (Entrante, Primer Plato, Segundo, Postre, Bebida)
+- ➕ **Añadir categorías personalizadas** con múltiples opciones
+- 🗑️ **Eliminar categorías** existentes
+- 🔄 **Resetear selección** completa
+- 📄 **Generar PDF** con menú seleccionado
+- 📅 **Fecha automática** en el documento
+- 📊 **Resumen impreso** de selecciones
+- ⬅️ **Navegación** de regreso al planificador
 
 ---
 
@@ -547,6 +602,20 @@ pydantic==2.5.0
 - [x] **5 recetas precargadas de ejemplo**
 - [x] **Contador de recetas filtradas**
 
+#### Frontend - Selector de Menú 🆕
+- [x] **Opciones desplegables por categoría**
+- [x] **5 categorías predefinidas con opciones**
+- [x] **Añadir categorías personalizadas**
+- [x] **Eliminar categorías existentes**
+- [x] **Selección de opciones para cada categoría**
+- [x] **Botón "Elige Menú" en página principal**
+- [x] **Resetear todas las selecciones**
+- [x] **Generar PDF con menú completo**
+- [x] **Fecha automática en documento**
+- [x] **Resumen impreso de selecciones**
+- [x] **Navegación de regreso al planificador**
+- [x] **Diseño responsive con gradiente naranja/amarillo**
+
 #### Backend
 - [x] API REST con FastAPI
 - [x] Generación de menús semanales
@@ -623,7 +692,7 @@ pydantic==2.5.0
 4. Revisa y edita si es necesario
 5. Imprime el resultado
 
-### **Gestionar Listado de Platos** 🆕
+### **Gestionar Listado de Platos**
 1. **Acceder:** Click en botón verde "Listado de Platos"
 2. **Buscar:** Escribe en el campo de búsqueda
 3. **Filtrar:** Usa selectores de categoría y cocina
@@ -633,6 +702,21 @@ pydantic==2.5.0
    - Click en "Guardar Plato"
 5. **Eliminar receta:** Click en icono de papelera 🗑️
 6. **Volver:** Click en "Volver al Planificador"
+
+### **Selector de Menú con Opciones** 🆕
+1. **Acceder:** Click en botón naranja "Elige Menú"
+2. **Seleccionar opciones:**
+   - Usa los desplegables para cada categoría
+   - Elige una opción de cada lista
+3. **Añadir categoría personalizada:**
+   - Click en "Añadir Categoría"
+   - Escribe el nombre (Ej: "Guarnición")
+   - Escribe las opciones separadas por comas
+   - Click en "Guardar Categoría"
+4. **Eliminar categoría:** Click en icono de papelera 🗑️
+5. **Resetear:** Click en "Resetear Selección" para limpiar todo
+6. **Generar PDF:** Click en "Descargar PDF" para obtener el menú
+7. **Volver:** Click en "Volver al Planificador"
 
 ---
 
@@ -698,11 +782,63 @@ Para problemas técnicos, revisar:
 
 ---
 
-**Última actualización:** 18 de noviembre de 2025
+**Última actualización:** 21 de noviembre de 2025
 
 **Cambios recientes:**
-- ✨ Añadido componente RecipeList.tsx para gestión de recetas
-- 🔄 Implementado sistema de navegación entre vistas
-- 🎨 Interfaz de listado con búsqueda y filtros avanzados
-- ➕ Funcionalidad de añadir/eliminar recetas
+- 🍽️ Añadido componente MenuSelector.tsx para elegir menú con opciones
+- � Sistema de categorías desplegables (Entrante, Primer Plato, Segundo, Postre, Bebida)
+- ➕ Funcionalidad de añadir/eliminar categorías personalizadas
+- 📄 Generación de PDF con menú seleccionado
+- 🔄 Botón de reseteo para limpiar selecciones
+- 🎨 Interfaz con gradiente naranja/amarillo
+- ✨ Añadido componente RecipeList.tsx para gestión de recetas (18/11/2025)
+- 🔄 Implementado sistema de navegación entre vistas (18/11/2025)
 
+Página Principal (Planificador)
+    ├── Botón Naranja "Elige Menú" → MenuSelector
+    ├── Botón Verde "Listado de Platos" → RecipeList  
+    ├── Botón Morado "Generar con IA" → Modal IA
+    └── Botón Azul "Imprimir PDF" → Exportar
+
+MenuSelector
+    ├── Header con título y botón "Volver"
+    ├── Botones de acción:
+    │   ├── "Añadir Categoría" (Verde)
+    │   ├── "Resetear Selección" (Gris)
+    │   └── "Descargar PDF" (Azul)
+    ├── Formulario añadir categoría (desplegable)
+    └── Lista de categorías con selectores
+        └── Cada categoría puede eliminarse
+
+    1. Nuevo Componente: MenuSelector.tsx
+Características principales:
+
+✅ 5 categorías predefinidas:
+
+🥗 Entrante (7 opciones)
+🍝 Primer Plato (7 opciones)
+🍖 Segundo Plato (7 opciones)
+🍰 Postre (6 opciones)
+🥤 Bebida (6 opciones)
+✅ Funcionalidades interactivas:
+
+Selectores desplegables para cada categoría
+Añadir categorías personalizadas
+Eliminar categorías
+Resetear todas las selecciones
+Generar PDF con menú completo
+✅ PDF optimizado:
+
+Incluye fecha automática
+Muestra solo opciones seleccionadas
+Resumen completo al final
+Formato profesional para impresión
+2. Navegación Actualizada en App.tsx
+✅ Botón naranja "Elige Menú" (con icono 🍽️)
+✅ Estado de navegación expandido: 'planner' | 'recipes' | 'menu'
+✅ Navegación fluida entre las 3 vistas
+3. Documentación Actualizada
+✅ ESTRUCTURA_APLICACION.md completamente actualizado
+✅ Diagrama de arquitectura con las 3 vistas
+✅ Instrucciones de uso detalladas
+✅ Características técnicas documentadas

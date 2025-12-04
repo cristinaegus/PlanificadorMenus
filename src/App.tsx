@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { Printer, Sparkles, List } from 'lucide-react';
+import { Printer, Sparkles, List, UtensilsCrossed } from 'lucide-react';
 import RecipeList from './RecipeList';
+import MenuSelector from './MenuSelector';
 
 type Meal = {
   breakfast: string;
@@ -75,7 +76,7 @@ function App() {
   const weekDays = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 
   // Estado de navegación
-  const [currentView, setCurrentView] = useState<'planner' | 'recipes'>('planner');
+  const [currentView, setCurrentView] = useState<'planner' | 'recipes' | 'menu'>('planner');
 
   // Estado independiente para Cristina y Marisa
   const [weeklyPlanCristina, setWeeklyPlanCristina] = React.useState<WeeklyPlan>(() => {
@@ -186,12 +187,24 @@ function App() {
     return <RecipeList onBack={() => setCurrentView('planner')} />;
   }
 
+  // Mostrar vista de selector de menú
+  if (currentView === 'menu') {
+    return <MenuSelector onBack={() => setCurrentView('planner')} />;
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8 no-print">
           <h1 className="text-3xl font-bold text-sky-700">Planificador Semanal de Menús</h1>
           <div className="flex gap-3">
+            <button
+              onClick={() => setCurrentView('menu')}
+              className="flex items-center gap-2 bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors"
+            >
+              <UtensilsCrossed size={20} />
+              Elige Menú
+            </button>
             <button
               onClick={() => setCurrentView('recipes')}
               className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
