@@ -154,3 +154,11 @@ Python-dotenv
 Pydantic
 
 Claude Sonnet 4.5 • 1x
+
+Para correr el backend, asegúrate de estar en el entorno virtual:
+
+```bashsource venv/bin/activate  # En macOS/Linux
+venv\Scripts\activate     # En Windows
+en terminal
+```
+cd backend; python -m uvicorn app:app --reload --host 0.0.0.0 --port 8000
