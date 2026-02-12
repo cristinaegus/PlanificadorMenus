@@ -141,6 +141,32 @@ RECETAS_LOCALES = {
             "Boquerones en Vinagre",
             "Queso Manchego con Membrillo"
         ]
+    },
+    "recetas casa": {
+        "lunch": [
+            "Estofado de Ternera Casero",
+            "Macarrones con Tomate",
+            "Pollo Asado con Patatas",
+            "Albóndigas en Salsa",
+            "Guiso de Lentejas",
+            "Arroz con Pollo",
+            "Pescado Rebozado con Ensalada",
+            "Canelones de Carne",
+            "Costillas al Horno",
+            "Codillo con Verduras"
+        ],
+        "dinner": [
+            "Sopa de Fideos",
+            "Tortilla Francesa",
+            "Puré de Verduras",
+            "Empanadillas Caseras",
+            "Crema de Zanahoria",
+            "Caldo de Pollo",
+            "Revuelto de Huevos",
+            "San Jacobo Casero",
+            "Salchichas con Patatas",
+            "Flamenquines"
+        ]
     }
 }
 
