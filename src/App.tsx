@@ -182,6 +182,46 @@ function App() {
     }
   };
 
+  // Función para generar y descargar menú de casa
+  const handleMenuCasa = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/generar-menu-casa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id_cristina: 1,
+          id_marisa: 1
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al generar el menú de casa');
+      }
+
+      // Convertir la respuesta a blob (archivo)
+      const blob = await response.blob();
+      
+      // Crear un enlace temporal para descargar el archivo
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'menu_semanal_casa.pdf';
+      document.body.appendChild(link);
+      link.click();
+      
+      // Limpiar
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      
+      alert('¡PDF del Menú Casa descargado con éxito!');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al generar el menú de casa. Asegúrate de que el backend esté funcionando.');
+    }
+  };
+
   // Mostrar vista de listado de recetas
   if (currentView === 'recipes') {
     return <RecipeList onBack={() => setCurrentView('planner')} />;
@@ -211,6 +251,13 @@ function App() {
             >
               <List size={20} />
               Listado de Platos
+            </button>
+            <button
+              onClick={() => handleMenuCasa()}
+              className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+            >
+              <UtensilsCrossed size={20} />
+              Menú Casa
             </button>
             <button
               onClick={() => setShowAIModal(true)}
