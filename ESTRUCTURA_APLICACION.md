@@ -862,3 +862,86 @@ Recarga: Activada para desarrollo
 El servidor está listo para recibir peticiones del frontend. Puedes verificar que funciona accediendo a http://localhost:8000 en tu navegador.
 
 Claude Sonnet 4 • 1x
+
+
+Reviewed App.tsx and checked package.json
+Voy a revisar tu aplicación Vite y el archivo de configuración para ver en qué puerto puedes iniciarla:
+
+Reviewed 3 files
+¡Perfecto! Veo que tienes una aplicación Vite + React + TypeScript con un planificador de menús. Te explico cómo iniciarla:
+
+🚀 Cómo Iniciar tu Aplicación Vite Frontend:
+1. Puerto por Defecto de Vite:
+Puerto: 5173 (puerto por defecto de Vite)
+
+2. Comandos para Iniciar:
+Ejecutado Get-Location
+Ejecutar en Terminal
+Ejecutado Set-Location ..
+Ejecutar en Terminal
+Ejecutado npm run dev
+Started Vite application successfully on port 5173
+🎉 ¡APLICACIÓN VITE INICIADA EXITOSAMENTE!
+✅ Ahora Tienes 2 Aplicaciones Funcionando:
+🎯 Frontend Vite + React:
+🌐 URL: http://localhost:5173/
+⚡ Framework: Vite + React + TypeScript
+🍽️ App: Planificador de Menús (tu interfaz original)
+✨ Features: Tabla de menús semanales, impresión, etc.
+🏥 Backend FastAPI:
+🌐 URL: http://localhost:8001/
+🔧 Framework: FastAPI + Python
+📄 Features: Generador de PDFs de dietas médicas
+🚀 Cómo Usar Ambas Aplicaciones:
+📱 Para UI del Planificador de Menús:
+Abre: http://localhost:5173/
+
+Interfaz React con tabla de menús semanales
+Funciones de impresión
+Diseño con Tailwind CSS
+🏥 Para Dietas Médicas:
+Abre: http://localhost:8001/
+
+Interfaz web para descargar PDFs médicos
+4 modelos de dieta de OSAKIDETZA
+API REST para integración
+💡 Integración Recomendada:
+Puedes integrar ambas aplicaciones agregando en tu React (puerto 5173) botones que llamen a la API del backend (puerto 8001) para generar PDFs médicos.
+
+📋 Estado Actual:
+✅ Frontend Vite: Funcionando en puerto 5173
+✅ Backend FastAPI: Funcionando en puerto 8001
+✅ PDFs médicos: Listos para descargar
+✅ Interfaz planificador: Lista para usar
+
+
+✅ ¿Qué He Agregado?
+🔧 Funcionalidades Nuevas:
+✅ Nuevo botón "Dietas Médicas" en la barra superior
+✅ Modal completo con interfaz profesional para dietas
+✅ Descargas directas de todos los PDFs médicos
+✅ Estados de carga con spinners durante descargas
+✅ Manejo de errores con mensajes informativos
+✅ Viewer de información JSON en ventana separada
+
+📱 Nueva Interfaz Incluye:
+🏥 PDF Completo → Todos los 4 modelos en un archivo
+📊 Tabla Resumen → Vista comparativa de modelos
+🔢 Modelos Individuales → Botones 1, 2, 3, 4 por separado
+ℹ️ Ver información detallada → JSON con todos los datos
+🌐 Integración de APIs:
+Frontend React (puerto 5173) → Tu aplicación principal
+Backend FastAPI (puerto 8001) → Generador de PDFs médicos
+Comunicación perfecta entre ambos sistemas
+🚀 ¿Cómo Usar Ahora?
+1. Abre tu aplicación React:
+http://localhost:5173/
+
+2. Verás el nuevo botón "Dietas Médicas" (color teal)
+3. Al hacer click se abre un modal con:
+Descripción de OSAKIDETZA
+Botones grandes para PDF completo y resumen
+Grid con botones para modelos individuales
+Información detallada en JSON
+4. ¡Los PDFs se descargan automáticamente!
+📋 Estado Actual del Sistema:

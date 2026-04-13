@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { Printer, Sparkles, List, UtensilsCrossed } from 'lucide-react';
+import { Printer, Sparkles, List, UtensilsCrossed, Heart, FileText, Download, Info } from 'lucide-react';
 import RecipeList from './RecipeList';
 import MenuSelector from './MenuSelector';
 
@@ -101,6 +101,10 @@ function App() {
   const [aiRestrictions, setAiRestrictions] = useState('');
   const [aiCuisineType, setAiCuisineType] = useState('mediterránea');
   const [isGenerating, setIsGenerating] = useState(false);
+
+  // Estados para las dietas médicas
+  const [showMedicalDietsModal, setShowMedicalDietsModal] = useState(false);
+  const [downloadingDiet, setDownloadingDiet] = useState<number | null>(null);
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -222,6 +226,92 @@ function App() {
     }
   };
 
+  // Funciones para dietas médicas
+  const downloadMedicalDiet = async (modelNumber: number | 'complete' | 'summary') => {
+    try {
+      if (typeof modelNumber === 'number') {
+        setDownloadingDiet(modelNumber);
+      }
+
+      let url = '';
+      let filename = '';
+
+      if (modelNumber === 'complete') {
+        url = 'http://localhost:8001/dieta-modelos/generar-pdf-completo';
+        filename = 'modelos_dieta_completos.pdf';
+      } else if (modelNumber === 'summary') {
+        url = 'http://localhost:8001/dieta-modelos/generar-resumen';
+        filename = 'resumen_modelos_dieta.pdf';
+      } else {
+        url = `http://localhost:8001/dieta-modelos/generar-pdf-modelo/${modelNumber}`;
+        filename = `modelo_dieta_${modelNumber}.pdf`;
+      }
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`Error al descargar: ${response.statusText}`);
+      }
+
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(downloadUrl);
+      
+      alert(`¡PDF ${filename} descargado con éxito!`);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al descargar el PDF. Asegúrate de que el backend esté funcionando en el puerto 8001.');
+    } finally {
+      setDownloadingDiet(null);
+    }
+  };
+
+  const viewDietInfo = async () => {
+    try {
+      const response = await fetch('http://localhost:8001/dieta-modelos/info');
+      if (!response.ok) {
+        throw new Error('Error al obtener información');
+      }
+      const data = await response.json();
+      
+      // Mostrar información en una ventana nueva o modal
+      const infoWindow = window.open('', '_blank', 'width=800,height=600');
+      infoWindow?.document.write(`
+        <html>
+          <head>
+            <title>Información de Modelos de Dieta</title>
+            <style>
+              body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+              h1 { color: #2c3e50; }
+              .model { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+              .description { color: #7f8c8d; margin-bottom: 10px; }
+            </style>
+          </head>
+          <body>
+            <h1>📋 Modelos de Dieta OSAKIDETZA</h1>
+            <div class="description">
+              <p><strong>Descripción:</strong> ${data.descripcion}</p>
+              <p><strong>Modelos disponibles:</strong> ${data.modelos_disponibles.join(', ')}</p>
+            </div>
+            <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow: auto;">
+${JSON.stringify(data.modelos, null, 2)}
+            </pre>
+          </body>
+        </html>
+      `);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al obtener información. Asegúrate de que el backend esté funcionando.');
+    }
+  };
+
   // Mostrar vista de listado de recetas
   if (currentView === 'recipes') {
     return <RecipeList onBack={() => setCurrentView('planner')} />;
@@ -265,6 +355,13 @@ function App() {
             >
               <Sparkles size={20} />
               Generar con IA
+            </button>
+            <button
+              onClick={() => setShowMedicalDietsModal(true)}
+              className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
+            >
+              <Heart size={20} />
+              Dietas Médicas
             </button>
             <button
               onClick={handlePrint}
@@ -416,6 +513,113 @@ function App() {
           </div>
         </div>
       </div>
+      )}
+
+      {/* Modal para Dietas Médicas */}
+      {showMedicalDietsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 no-print">
+          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                <Heart className="text-teal-600" size={28} />
+                Dietas Médicas OSAKIDETZA
+              </h2>
+              <button
+                onClick={() => setShowMedicalDietsModal(false)}
+                className="text-gray-500 hover:text-gray-700 text-xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            
+            <div className="space-y-6">
+              {/* Descripción */}
+              <div className="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                <p className="text-teal-800 font-medium">
+                  📋 Modelos de dieta de 1000 kcal para cirugía de obesidad
+                </p>
+                <p className="text-teal-600 text-sm mt-1">
+                  Unidad de Nutrición 2015 - 4 modelos disponibles
+                </p>
+              </div>
+
+              {/* Botones de descarga principal */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button
+                  onClick={() => downloadMedicalDiet('complete')}
+                  disabled={downloadingDiet !== null}
+                  className="flex items-center gap-3 p-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50"
+                >
+                  <FileText size={24} />
+                  <div className="text-left">
+                    <div className="font-semibold">PDF Completo</div>
+                    <div className="text-sm opacity-90">Todos los 4 modelos</div>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => downloadMedicalDiet('summary')}
+                  disabled={downloadingDiet !== null}
+                  className="flex items-center gap-3 p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+                >
+                  <FileText size={24} />
+                  <div className="text-left">
+                    <div className="font-semibold">Tabla Resumen</div>
+                    <div className="text-sm opacity-90">Vista comparativa</div>
+                  </div>
+                </button>
+              </div>
+
+              {/* Modelos individuales */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Modelos Individuales:</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[1, 2, 3, 4].map((modelNumber) => (
+                    <button
+                      key={modelNumber}
+                      onClick={() => downloadMedicalDiet(modelNumber)}
+                      disabled={downloadingDiet === modelNumber}
+                      className="flex flex-col items-center gap-2 p-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {downloadingDiet === modelNumber ? (
+                        <>
+                          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+                          <span className="text-sm">Descargando...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Download size={20} />
+                          <span className="font-medium">Modelo {modelNumber}</span>
+                        </>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Información adicional */}
+              <div className="border-t pt-4">
+                <button
+                  onClick={viewDietInfo}
+                  className="flex items-center gap-2 text-teal-600 hover:text-teal-800 transition-colors"
+                >
+                  <Info size={18} />
+                  Ver información detallada (JSON)
+                </button>
+              </div>
+
+              {/* Botón cerrar */}
+              <div className="flex justify-end pt-4 border-t">
+                <button
+                  onClick={() => setShowMedicalDietsModal(false)}
+                  className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
