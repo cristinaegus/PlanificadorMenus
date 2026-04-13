@@ -1,0 +1,406 @@
+{
+  "modelos_dieta": {
+    "modelo_1": {
+      "descripcion": "Dieta de 1000 kcal, 60g proteína, 130g HC",
+      "desayuno": {
+        "alimentos": [
+          {
+            "nombre": "Leche desnatada",
+            "cantidad": "200ml"
+          },
+          {
+            "nombre": "Biscotes",
+            "cantidad": "15g",
+            "unidades": "2 unidades"
+          }
+        ]
+      },
+      "media_mañana": {
+        "alimentos": [
+          {
+            "nombre": "Fruta",
+            "cantidad": "150g",
+            "opciones": ["Manzana", "Mandarina", "Kiwi", "Melocotón", "Naranja", "Pera"]
+          }
+        ]
+      },
+      "comida": {
+        "alimentos": [
+          {
+            "plato": "Lentejas",
+            "ingredientes": [
+              {
+                "nombre": "Lentejas en crudo",
+                "cantidad": "55g"
+              },
+              {
+                "nombre": "Zanahoria",
+                "cantidad": "10g"
+              },
+              {
+                "nombre": "Pimiento",
+                "cantidad": "10g"
+              },
+              {
+                "nombre": "Patata",
+                "cantidad": "10g"
+              }
+            ]
+          },
+          {
+            "nombre": "Ternera a la plancha",
+            "cantidad": "75g",
+            "aceite": "5ml de aceite de oliva"
+          },
+          {
+            "nombre": "Fruta",
+            "cantidad": "150g",
+            "opciones": ["Manzana", "Mandarina", "Kiwi", "Melocotón", "Naranja", "Pera"]
+          },
+          {
+            "nombre": "Pan",
+            "cantidad": "20g"
+          }
+        ]
+      },
+      "merienda": {
+        "alimentos": [
+          {
+            "nombre": "Yogur desnatado",
+            "cantidad": "125g"
+          }
+        ]
+      },
+      "cena": {
+        "alimentos": [
+          {
+            "plato": "Ensalada",
+            "ingredientes": [
+              {
+                "nombre": "Lechuga",
+                "cantidad": "50g"
+              },
+              {
+                "nombre": "Tomate",
+                "cantidad": "50g"
+              },
+              {
+                "nombre": "Cebolla",
+                "cantidad": "25g"
+              }
+            ]
+          },
+          {
+            "nombre": "Lubina",
+            "cantidad": "80g",
+            "aceite": "5ml de aceite de oliva"
+          },
+          {
+            "nombre": "Fruta",
+            "cantidad": "150g",
+            "opciones": ["Manzana", "Mandarina", "Kiwi", "Melocotón", "Naranja", "Pera"]
+          }
+        ]
+      }
+    },
+    "modelo_2": {
+      "descripcion": "Dieta de 1000 kcal, 60g proteína, 130g HC",
+      "desayuno": {
+        "alimentos": [
+          {
+            "nombre": "Leche desnatada",
+            "cantidad": "200ml"
+          },
+          {
+            "nombre": "Pan",
+            "cantidad": "20g"
+          }
+        ]
+      },
+      "media_mañana": {
+        "alimentos": [
+          {
+            "nombre": "Fruta",
+            "cantidad": "150g",
+            "opciones": ["Manzana", "Mandarina", "Kiwi", "Melocotón", "Naranja", "Pera"]
+          }
+        ]
+      },
+      "comida": {
+        "alimentos": [
+          {
+            "plato": "Macarrones a la Boloñesa",
+            "ingredientes": [
+              {
+                "nombre": "Pasta cruda",
+                "cantidad": "50g"
+              },
+              {
+                "nombre": "Tomate triturado",
+                "cantidad": "10g"
+              },
+              {
+                "nombre": "Carne de ternera picada",
+                "cantidad": "75g"
+              },
+              {
+                "nombre": "Aceite",
+                "cantidad": "5ml"
+              }
+            ]
+          },
+          {
+            "nombre": "Fruta",
+            "cantidad": "150g",
+            "opciones": ["Manzana", "Mandarina", "Kiwi", "Melocotón", "Naranja", "Pera"]
+          },
+          {
+            "nombre": "Pan",
+            "cantidad": "20g"
+          }
+        ]
+      },
+      "merienda": {
+        "alimentos": [
+          {
+            "nombre": "Yogur desnatado",
+            "cantidad": "125g"
+          }
+        ]
+      },
+      "cena": {
+        "alimentos": [
+          {
+            "plato": "Porrusalda",
+            "ingredientes": [
+              {
+                "nombre": "Patata",
+                "cantidad": "50g"
+              },
+              {
+                "nombre": "Zanahoria",
+                "cantidad": "40g"
+              },
+              {
+                "nombre": "Puerro",
+                "cantidad": "100g"
+              }
+            ]
+          },
+          {
+            "nombre": "Dorada",
+            "cantidad": "80g",
+            "aceite": "5ml de aceite de oliva"
+          },
+          {
+            "nombre": "Yogur desnatado",
+            "cantidad": "125g"
+          }
+        ]
+      }
+    },
+    "modelo_3": {
+      "descripcion": "Dieta de 1000 kcal, 60g proteína, 150g HC",
+      "desayuno": {
+        "alimentos": [
+          {
+            "nombre": "Leche desnatada",
+            "cantidad": "200ml"
+          },
+          {
+            "nombre": "Galletas María",
+            "cantidad": "15g"
+          }
+        ]
+      },
+      "media_mañana": {
+        "alimentos": [
+          {
+            "nombre": "Yogurt desnatado",
+            "cantidad": "125g"
+          }
+        ]
+      },
+      "comida": {
+        "alimentos": [
+          {
+            "plato": "Puré de patata y zanahoria",
+            "ingredientes": [
+              {
+                "nombre": "Patata",
+                "cantidad": "150g"
+              },
+              {
+                "nombre": "Zanahoria",
+                "cantidad": "100g"
+              }
+            ]
+          },
+          {
+            "nombre": "Pollo deshuesado",
+            "cantidad": "80g",
+            "aceite": "5ml de aceite de oliva"
+          },
+          {
+            "nombre": "Manzana",
+            "cantidad": "100g"
+          },
+          {
+            "nombre": "Pan",
+            "cantidad": "30g"
+          }
+        ]
+      },
+      "merienda": {
+        "alimentos": [
+          {
+            "nombre": "Pan blanco",
+            "cantidad": "20g"
+          },
+          {
+            "nombre": "Queso lonchas Sveltesse",
+            "cantidad": "19g"
+          }
+        ]
+      },
+      "cena": {
+        "alimentos": [
+          {
+            "plato": "Ensalada",
+            "ingredientes": [
+              {
+                "nombre": "Lechuga",
+                "cantidad": "25g"
+              },
+              {
+                "nombre": "Tomate",
+                "cantidad": "150g"
+              },
+              {
+                "nombre": "Zanahoria",
+                "cantidad": "30g"
+              },
+              {
+                "nombre": "Atún en lata Calvo al natural",
+                "cantidad": "25g"
+              },
+              {
+                "nombre": "Huevo cocido",
+                "cantidad": "50g"
+              }
+            ]
+          },
+          {
+            "nombre": "Pan blanco",
+            "cantidad": "30g"
+          },
+          {
+            "nombre": "Naranja",
+            "cantidad": "200g"
+          }
+        ]
+      }
+    },
+    "modelo_4": {
+      "descripcion": "Dieta de 1000 kcal, 60g proteína, 150g HC",
+      "desayuno": {
+        "alimentos": [
+          {
+            "nombre": "Leche desnatada",
+            "cantidad": "200ml"
+          },
+          {
+            "nombre": "Cereales sin azúcar",
+            "cantidad": "25g",
+            "descripcion": "un puñado"
+          }
+        ]
+      },
+      "media_mañana": {
+        "alimentos": [
+          {
+            "nombre": "Fruta",
+            "cantidad": "150g",
+            "opciones": ["Manzana", "Mandarina", "Kiwi", "Melocotón", "Naranja", "Pera"]
+          }
+        ]
+      },
+      "comida": {
+        "alimentos": [
+          {
+            "plato": "Arroz con tomate",
+            "ingredientes": [
+              {
+                "nombre": "Arroz",
+                "cantidad": "50g"
+              },
+              {
+                "nombre": "Tomate triturado",
+                "cantidad": "10g"
+              }
+            ]
+          },
+          {
+            "nombre": "Merluza a la plancha/horno/hervida",
+            "cantidad": "75g",
+            "aceite": "5ml de aceite de oliva"
+          },
+          {
+            "nombre": "Fruta",
+            "cantidad": "150g",
+            "opciones": ["Manzana", "Mandarina", "Kiwi", "Melocotón", "Naranja", "Pera"]
+          },
+          {
+            "nombre": "Pan",
+            "cantidad": "20g"
+          }
+        ]
+      },
+      "merienda": {
+        "alimentos": [
+          {
+            "nombre": "Yogur desnatado",
+            "cantidad": "125g"
+          }
+        ]
+      },
+      "cena": {
+        "alimentos": [
+          {
+            "plato": "Acelgas con patatas",
+            "ingredientes": [
+              {
+                "nombre": "Patata",
+                "cantidad": "75g"
+              },
+              {
+                "nombre": "Zanahoria",
+                "cantidad": "40g"
+              },
+              {
+                "nombre": "Acelgas",
+                "cantidad": "100g"
+              }
+            ]
+          },
+          {
+            "nombre": "Ternera a la plancha",
+            "cantidad": "80g",
+            "aceite": "5ml de aceite de oliva"
+          },
+          {
+            "nombre": "Yogur desnatado",
+            "cantidad": "125g"
+          }
+        ]
+      }
+    }
+  },
+  "notas_importantes": [
+    "Estos modelos corresponden a una dieta de muy bajas calorías",
+    "Pueden combinarse los distintos modelos (1, 2, 3 ó 4) a lo largo de las 2 semanas",
+    "Cada día un modelo diferente o repetir el mismo modelo, pero NO mezclarlos",
+    "No se puede combinar el desayuno del modelo 1 con la comida del modelo 2, etc.",
+    "Mantener una correcta hidratación e iniciar la toma diaria de un multivitamínico"
+  ]
+}
