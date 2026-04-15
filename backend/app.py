@@ -6,6 +6,7 @@ from typing import Optional
 import ai_menu
 import menu_casa
 import dieta_pdf_generator
+import menu_semanal_pdf_generator
 import os
 
 app = FastAPI(title="Menu Generator API", version="1.0.0")
@@ -477,6 +478,27 @@ def obtener_info_modelos():
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error al obtener información: {str(e)}")
+
+@app.get("/dieta-2/generar-menu-semanal-pdf")
+def generar_menu_semanal_dieta2():
+    """
+    Genera un PDF con menú semanal aleatorio usando opciones de dietas_2.json
+    """
+    try:
+        # Generar PDF con menú aleatorio
+        archivo_pdf = menu_semanal_pdf_generator.generar_menu_semanal_pdf(modo='aleatorio')
+        
+        if not os.path.exists(archivo_pdf):
+            raise HTTPException(status_code=500, detail="Error al generar el PDF del menú semanal")
+        
+        return FileResponse(
+            path=archivo_pdf,
+            media_type="application/pdf",
+            filename=os.path.basename(archivo_pdf),
+            headers={"Content-Disposition": f"attachment; filename={os.path.basename(archivo_pdf)}"}
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error al generar menú semanal PDF: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn

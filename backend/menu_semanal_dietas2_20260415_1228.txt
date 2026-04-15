@@ -1,0 +1,196 @@
+PLANIFICADOR SEMANAL - DIETAS 2
+================================================================================
+
+REQUISITOS DIARIOS:
+• Pan Total: 60gr al día
+• Agua: 1.5 litros al día
+
+================================================================================
+
+LUNES
+--------------------------------------------------
+
+DESAYUNO - Opcion 1
+  • Leche desnatada: 200ml
+  • Galletas María: 3 unidades
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 2
+  • Queso fresco: 50gr
+
+COMIDA - Lentejas con verdura y arroz
+Detalles: 200gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + lenguado plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+MARTES
+--------------------------------------------------
+
+DESAYUNO - Opcion 3
+  • Yogures desnatados: 2 unidades
+  • Tostada de pan: 20gr
+  • Queso blanco: 40gr
+
+SNACK/MERIENDA - Opcion 2
+  • Queso fresco: 50gr
+
+COMIDA - Lentejas con verdura y arroz
+Detalles: 200gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + gallo a la plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+MIÉRCOLES
+--------------------------------------------------
+
+DESAYUNO - Opcion 1
+  • Leche desnatada: 200ml
+  • Galletas María: 3 unidades
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 1
+  • Pan (tres rodajas pequeñas): 20gr
+  • Embutido - Opciones: York o pavo (1 loncha (15gr)), Jamón serrano (1 loncha (15gr)), Atún al natural (50gr)
+
+COMIDA - Lentejas con verdura y arroz
+Detalles: 200gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + lenguado plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+JUEVES
+--------------------------------------------------
+
+DESAYUNO - Opcion 1
+  • Leche desnatada: 200ml
+  • Galletas María: 3 unidades
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 3
+  • Yogur desnatado: 125gr
+
+COMIDA - Ternera guisada + patatas asadas o cocindas
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Tortilla francesa o patata al vapor/micro
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+VIERNES
+--------------------------------------------------
+
+DESAYUNO - Opcion 2
+  • Leche desnatada: 200ml
+  • Mermelada sin azúcar: 20gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 2
+  • Queso fresco: 50gr
+
+COMIDA - Parrilladas de verduras + pescado o carne
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + gallo a la plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+SÁBADO
+--------------------------------------------------
+
+DESAYUNO - Opcion 4
+  • Leche desnatada: 200ml
+  • Cereales sin azúcar (copos de maíz): 30gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 1
+  • Pan (tres rodajas pequeñas): 20gr
+  • Embutido - Opciones: York o pavo (1 loncha (15gr)), Jamón serrano (1 loncha (15gr)), Atún al natural (50gr)
+
+COMIDA - Lentejas con verdura y arroz
+Detalles: 200gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Revuelto de espárragos y gambas o setas
+Detalles: huevos: 1 huevo
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+DOMINGO
+--------------------------------------------------
+
+DESAYUNO - Opcion 4
+  • Leche desnatada: 200ml
+  • Cereales sin azúcar (copos de maíz): 30gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 1
+  • Pan (tres rodajas pequeñas): 20gr
+  • Embutido - Opciones: York o pavo (1 loncha (15gr)), Jamón serrano (1 loncha (15gr)), Atún al natural (50gr)
+
+COMIDA - Pisto con huevo
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Puré de calabaza o calabacín
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+

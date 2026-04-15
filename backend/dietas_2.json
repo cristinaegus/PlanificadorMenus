@@ -1,0 +1,242 @@
+{
+  "dietas_2": {
+    "descripcion": "Opciones de menú diario con desayunos, snacks, comidas y cenas",
+    "requisitos_diarios": {
+      "pan_total": "60gr al día",
+      "agua": "1.5 litros al día"
+    },
+    "desayunos": {
+      "opciones": [
+        {
+          "opcion_1": {
+            "alimentos": [
+              {
+                "nombre": "Leche desnatada",
+                "cantidad": "200ml"
+              },
+              {
+                "nombre": "Galletas María",
+                "cantidad": "3 unidades"
+              },
+              {
+                "nombre": "Fruta",
+                "cantidad": "100gr"
+              }
+            ]
+          }
+        },
+        {
+          "opcion_2": {
+            "alimentos": [
+              {
+                "nombre": "Leche desnatada",
+                "cantidad": "200ml"
+              },
+              {
+                "nombre": "Mermelada sin azúcar",
+                "cantidad": "20gr"
+              },
+              {
+                "nombre": "Fruta",
+                "cantidad": "100gr"
+              }
+            ]
+          }
+        },
+        {
+          "opcion_3": {
+            "alimentos": [
+              {
+                "nombre": "Yogures desnatados",
+                "cantidad": "2 unidades"
+              },
+              {
+                "nombre": "Tostada de pan",
+                "cantidad": "20gr"
+              },
+              {
+                "nombre": "Queso blanco",
+                "cantidad": "40gr"
+              }
+            ]
+          }
+        },
+        {
+          "opcion_4": {
+            "alimentos": [
+              {
+                "nombre": "Leche desnatada",
+                "cantidad": "200ml"
+              },
+              {
+                "nombre": "Cereales sin azúcar (copos de maíz)",
+                "cantidad": "30gr"
+              },
+              {
+                "nombre": "Fruta",
+                "cantidad": "100gr"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "snacks_media_manana_merienda": {
+      "opciones": [
+        {
+          "opcion_1": {
+            "alimentos": [
+              {
+                "nombre": "Pan (tres rodajas pequeñas)",
+                "cantidad": "20gr"
+              },
+              {
+                "nombre": "Embutido",
+                "opciones": [
+                  {
+                    "tipo": "York o pavo",
+                    "cantidad": "1 loncha (15gr)"
+                  },
+                  {
+                    "tipo": "Jamón serrano",
+                    "cantidad": "1 loncha (15gr)"
+                  },
+                  {
+                    "tipo": "Atún al natural",
+                    "cantidad": "50gr"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "opcion_2": {
+            "alimentos": [
+              {
+                "nombre": "Queso fresco",
+                "cantidad": "50gr"
+              }
+            ]
+          }
+        },
+        {
+          "opcion_3": {
+            "alimentos": [
+              {
+                "nombre": "Yogur desnatado",
+                "cantidad": "125gr"
+              }
+            ]
+          }
+        },
+        {
+          "opcion_4": {
+            "alimentos": [
+              {
+                "nombre": "Leche desnatada",
+                "cantidad": "200ml"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "comidas": {
+      "complementos_fijos": [
+        {
+          "nombre": "Pan",
+          "cantidad": "20gr"
+        },
+        {
+          "nombre": "Fruta",
+          "cantidad": "100gr"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": "2 cucharadas máximo"
+        }
+      ],
+      "opciones": [
+        {
+          "plato": "Lentejas con verdura y arroz",
+          "cantidad_total": "200gr"
+        },
+        {
+          "plato": "Garbanzos con bacalao y espinacas"
+        },
+        {
+          "plato": "Espinacas al ajillo con pescado"
+        },
+        {
+          "plato": "Macarrones con tomate y pechuga pollo"
+        },
+        {
+          "plato": "Parrilladas de verduras + pescado o carne"
+        },
+        {
+          "plato": "Ternera guisada + patatas asadas o cocindas"
+        },
+        {
+          "plato": "Hamburguesa + acelgas o pisto"
+        },
+        {
+          "plato": "Pisto con huevo"
+        },
+        {
+          "plato": "Purrusalda o puré de verduras"
+        }
+      ]
+    },
+    "cenas": {
+      "complementos_fijos": [
+        {
+          "nombre": "Pan",
+          "cantidad": "20gr"
+        },
+        {
+          "nombre": "Fruta",
+          "cantidad": "100gr"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": "2 cucharadas máximo"
+        }
+      ],
+      "opciones": [
+        {
+          "plato": "Caldo de verduras + gallo a la plancha",
+          "detalles": {
+            "caldo": "200ml",
+            "pescado": "120gr"
+          }
+        },
+        {
+          "plato": "Sopa de verduras + bacalao plancha/horno",
+          "detalles": {
+            "pescado": "120gr"
+          }
+        },
+        {
+          "plato": "Caldo de verduras + lenguado plancha",
+          "detalles": {
+            "caldo": "200ml",
+            "pescado": "120gr"
+          }
+        },
+        {
+          "plato": "Revuelto de espárragos y gambas o setas",
+          "detalles": {
+            "huevos": "1 huevo"
+          }
+        },
+        {
+          "plato": "Puré de calabaza o calabacín"
+        },
+        {
+          "plato": "Tortilla francesa o patata al vapor/micro"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,190 @@
+PLANIFICADOR SEMANAL - DIETAS 2
+================================================================================
+
+REQUISITOS DIARIOS:
+• Pan Total: 60gr al día
+• Agua: 1.5 litros al día
+
+================================================================================
+
+LUNES
+--------------------------------------------------
+
+DESAYUNO - Opcion 2
+  • Leche desnatada: 200ml
+  • Mermelada sin azúcar: 20gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 4
+  • Leche desnatada: 200ml
+
+COMIDA - Purrusalda o puré de verduras
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + lenguado plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+MARTES
+--------------------------------------------------
+
+DESAYUNO - Opcion 2
+  • Leche desnatada: 200ml
+  • Mermelada sin azúcar: 20gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 3
+  • Yogur desnatado: 125gr
+
+COMIDA - Macarrones con tomate y pechuga pollo
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Tortilla francesa o patata al vapor/micro
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+MIÉRCOLES
+--------------------------------------------------
+
+DESAYUNO - Opcion 2
+  • Leche desnatada: 200ml
+  • Mermelada sin azúcar: 20gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 2
+  • Queso fresco: 50gr
+
+COMIDA - Macarrones con tomate y pechuga pollo
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + gallo a la plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+JUEVES
+--------------------------------------------------
+
+DESAYUNO - Opcion 3
+  • Yogures desnatados: 2 unidades
+  • Tostada de pan: 20gr
+  • Queso blanco: 40gr
+
+SNACK/MERIENDA - Opcion 4
+  • Leche desnatada: 200ml
+
+COMIDA - Purrusalda o puré de verduras
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + lenguado plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+VIERNES
+--------------------------------------------------
+
+DESAYUNO - Opcion 2
+  • Leche desnatada: 200ml
+  • Mermelada sin azúcar: 20gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 2
+  • Queso fresco: 50gr
+
+COMIDA - Espinacas al ajillo con pescado
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Revuelto de espárragos y gambas o setas
+Detalles: huevos: 1 huevo
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+SÁBADO
+--------------------------------------------------
+
+DESAYUNO - Opcion 2
+  • Leche desnatada: 200ml
+  • Mermelada sin azúcar: 20gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 2
+  • Queso fresco: 50gr
+
+COMIDA - Espinacas al ajillo con pescado
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + gallo a la plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
+DOMINGO
+--------------------------------------------------
+
+DESAYUNO - Opcion 4
+  • Leche desnatada: 200ml
+  • Cereales sin azúcar (copos de maíz): 30gr
+  • Fruta: 100gr
+
+SNACK/MERIENDA - Opcion 2
+  • Queso fresco: 50gr
+
+COMIDA - Macarrones con tomate y pechuga pollo
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+CENA - Caldo de verduras + gallo a la plancha
+Detalles: caldo: 200ml, pescado: 120gr
+Complementos:
+  • Pan: 20gr
+  • Fruta: 100gr
+  • Aceite: 2 cucharadas máximo
+
+================================================================================
+
